@@ -1,0 +1,9 @@
+.button:hover {
+    background-color:orange;
+    border: black;
+}
+
+.button:active {
+  background-color: orange;
+  border: black;
+}

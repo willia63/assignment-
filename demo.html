@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>JS DEMO</title>
+        </head>
+        <body>
+            <h1>Greeting message</h1>
+            <input type="text" id="name">
+            <button onclick="greeting()">Greeting</button>
+            <p id="message"></p>
+
+            <script>
+                //When user clicks button,show greeting message
+                function greeting() {
+                    //get in the data entered into the input element
+                    let enteredName = document.getElementById("name").value;
+                    document.getElementById("message").innerHTML = "hello " + enteredName +". Have a good day!"; 
+                }
+            </script>
+            <H1>Guess a number </H1>
+            <p>Guess a number between 1 and 9:</p>
+            <input type="number" id="guess">
+            <button onclick="guess()">try</button>
+            <p id="outcome"></p>
+            <button onclick="playagain()">Play Agian</button>
+            <script>
+            let randNumber = Math.floor(Math.random()*9) +1;
+            alert("random number: " + randNumber);
+                function guess(){
+                //generate a random number:
+                //check if the input is the same number
+                let enteredguess = document.getElementById("guess").value;
+                //if correct print congrats. if not, show message higher or lower
+                if (randNumber == enteredguess) {
+                    document.getElementById("outcome").innerHTML = "congrats. you won!";
+                }else if (randNumber > enteredguess){
+                    document.getElementById("outcome").innerHTML = "sorry. Bigger please.";
+                }else{
+                    document.getElementById("outcome").innerHTML = "Sorry smaller please.";
+                }
+            }
+            function playagain(){
+                randNumber = Math.floor(Math.random()* 9) +1;
+                document.getElementById("guess").value ="";
+                document.getElementById("outcome").innerHTML ="";
+                console.log(randNumber)
+            }
+            </script>
+
+            <h1>JS: object and array</h1>
+            <script>
+                //Declare an object
+                let amovie = {id: 1,
+                              title: "avatar",
+                              year:2023};
+                //declare an array or list of movies 
+                let topMovies = [
+                {id:0, title: "godfather", year: 1972},
+                {id:1, title: "The dark knight", year:2008},
+                {id:2, title: "Avatar", year:2023}
+
+                ];
+                            
+            </script>
+        </body>
+</html>
